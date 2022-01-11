@@ -68,6 +68,7 @@ defineExpose({
 }
 
 .el-menu-item {
+  width: 100%;
   background-color: #e9e1e2;
 }
 

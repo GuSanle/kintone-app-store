@@ -1,21 +1,25 @@
 import { createApp } from 'vue'
 import store from '@/store/store'
 import installElementPlus from '@/libs/element'
-import { FloatMenu } from 'vue-float-menu'
-import 'vue-float-menu/dist/vue-float-menu.css'
-import InstantSearch from 'vue-instantsearch/vue3/es'
 import App from '@/App.vue'
+import $ from 'jquery'
+
+const button = `<div id='kintone-app-store-button'
+class="gaia-header-toolbar-config goog-inline-block goog-menu-button"
+title="打开商城"
+role="button"
+aria-expanded="false"
+tabindex="0"
+aria-haspopup="true"
+style="user-select: none;"
+></div>`
 
 document.addEventListener('DOMContentLoaded', () => {
-  if (!document.getElementById('dld-dev-center')) {
-    const el = document.createElement('div')
-    el.id = 'dld-dev-center'
-    const app = createApp(App)
-    app.component('FloatMenu', FloatMenu)
-    installElementPlus(app)
-    app.use(store)
-    app.use(InstantSearch)
-    app.mount(el)
-    document.body.insertBefore(el, document.body.firstChild)
+  if ($('#kintone-app-store-button').length <= 0) {
+    $('.gaia-header-toolbar-links').prepend(button)
   }
+  const app = createApp(App)
+  installElementPlus(app)
+  app.use(store)
+  app.mount('#kintone-app-store-button')
 })
