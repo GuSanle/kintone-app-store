@@ -1,0 +1,77 @@
+.dialog {
+  min-width: 1200px;
+  max-width: 1500px;
+  height: 80vh;
+  border-radius: 10px;
+}
+
+.dialog ::-webkit-scrollbar {
+  width: 12px;
+}
+
+.dialog ::-webkit-scrollbar-track {
+  background-color: #f9f9f9;
+  border-left: 1px solid #e5e5e5;
+  border-radius: 0 10px 10px 0;
+}
+
+.dialog ::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  border-radius: 10px;
+}
+
+.el-dialog__close {
+  z-index: 999;
+  width: 28px;
+  height: 28px;
+  color: #fff !important;
+  font-size: 20px;
+  line-height: 28px;
+  vertical-align: bottom;
+  background-color: #4e4e4e;
+  border-radius: 50%;
+}
+
+.el-dialog__header,
+.el-dialog__body {
+  padding: 0;
+}
+
+.appstore-title {
+  color: #1e0e08;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.appstore-category-title {
+  padding: 10px 0;
+  color: #1e0e08;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.skeleton-text {
+  width: 95%;
+  margin: 20px 0 30px;
+}
+
+.skeleton-img {
+  width: 80px;
+  height: 80px;
+  margin-right: 30px;
+}
+
+.skeleton-flex {
+  display: flex;
+  align-items: flex-start;
+  justify-items: flex-start;
+}
+
+.skeleton-app-title {
+  width: 90%;
+  margin-bottom: 10px;
+}
+
+.skeleton-app-button {
+  width: 25%;
+}
