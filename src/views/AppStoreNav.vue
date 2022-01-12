@@ -1,6 +1,6 @@
 <template>
   <el-image class="img-logo" :src="logoSrc"></el-image>
-  <div class="logo-title">kintone应用中心</div>
+  <div class="logo-title">kintone应用商城</div>
   <el-menu :default-active="navIndex" class="menu">
     <el-menu-item index="0" @click="changeView('home')">
       <i class="home"></i>

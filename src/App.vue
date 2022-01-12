@@ -3,7 +3,7 @@
     <div class="goog-inline-block goog-menu-button-inner-box">
       <div class="goog-inline-block goog-menu-button-caption">
         <span class="gaia-header-img gaia-header-img-settings">
-          <img src="https://static.cybozu.com/contents/k/image/argo/header/settings.svg" alt />
+          <img src="@/assets/icons/store.svg" alt class="appstore-img" />
         </span>
       </div>
       <div class="goog-inline-block goog-menu-button-dropdown">&nbsp;</div>
