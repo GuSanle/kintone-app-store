@@ -10,13 +10,7 @@
     </div>
   </div>
 
-  <el-dialog
-    top="10vh"
-    v-model="centerDialogVisible"
-    destroy-on-close
-    custom-class="dialog"
-    @closed="handleClose"
-  >
+  <el-dialog top="10vh" v-model="centerDialogVisible" destroy-on-close custom-class="dialog">
     <app-store />
   </el-dialog>
 </template>
