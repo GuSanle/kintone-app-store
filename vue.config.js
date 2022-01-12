@@ -16,16 +16,16 @@ const envOptions = {
 
 module.exports = defineConfig({
   devServer: {
-    // liveReload: true,
-    // hot: false,
     webSocketServer: false,
     https: {
       key: readFileSync(resolve(__dirname, '../sslKey/localhost+2-key.pem')),
       cert: readFileSync(resolve(__dirname, '../sslKey/localhost+2.pem')),
     },
   },
-  transpileDependencies: true,
-  // productionSourceMap: false,
+
+  filenameHashing: false,
+  // transpileDependencies: true,
+  productionSourceMap: false,
 
   css: {
     extract: false,
