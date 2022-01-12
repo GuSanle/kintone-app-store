@@ -79,6 +79,7 @@ const recommendWord = '推荐'
 
 export default {
   name: 'AppStoreDetail',
+  inheritAttrs: false,
 };
 </script>
 
