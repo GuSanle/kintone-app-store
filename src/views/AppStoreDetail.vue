@@ -134,7 +134,7 @@ watch(downloading, (val) => {
   } else if (val === 'Failed') {
     notice = {
       title: '安装失败',
-      message: '应用安装失败',
+      message: '安装失败,请确认是否具有管理员权限',
       position: 'bottom-right',
       type: 'error',
     }

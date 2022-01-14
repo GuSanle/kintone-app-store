@@ -18,8 +18,8 @@ module.exports = defineConfig({
   devServer: {
     webSocketServer: false,
     https: {
-      key: readFileSync(resolve(__dirname, '../sslKey/localhost+2-key.pem')),
-      cert: readFileSync(resolve(__dirname, '../sslKey/localhost+2.pem')),
+      key: readFileSync(resolve(__dirname, '../../sslKey/localhost+2-key.pem')),
+      cert: readFileSync(resolve(__dirname, '../../sslKey/localhost+2.pem')),
     },
   },
 

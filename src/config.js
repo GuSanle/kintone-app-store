@@ -1,7 +1,7 @@
 export const backendConfig = {
-  domain: 'https://devcenter.cybozu.cn',
-  manageAppId: '32',
-  detailAppId: '33',
+  domain: 'https://app-market.cybozu.cn',
+  manageAppId: '3',
+  detailAppId: '4',
 }
 
 export const manageMapping = {
