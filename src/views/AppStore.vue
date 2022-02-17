@@ -51,6 +51,9 @@ store.dispatch('getAllApps').then((resp) => {
   loading.value = false
   error.value = resp.error
 })
+store.dispatch('getDomainGroup').then((resp) => {
+
+})
 const viewShow = ref('home')
 const navType = ref('home')
 const id = ref('')

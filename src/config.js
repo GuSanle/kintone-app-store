@@ -2,6 +2,7 @@ export const backendConfig = {
   domain: 'https://app-market.cybozu.cn',
   manageAppId: '3',
   detailAppId: '4',
+  whiteListAppId: '7',
 }
 
 export const manageMapping = {
@@ -35,4 +36,12 @@ export const detailMapping = {
   downloadCount: 'downloadCount',
   installCount: 'installCount',
   csvLink: 'csvLink',
+  appType: 'type',
+}
+
+export const whiteListMapping = {
+  id: '$id',
+  groupName: 'groupName',
+  type: 'type',
+  list: 'list',
 }

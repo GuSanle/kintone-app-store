@@ -21,6 +21,15 @@ export const InstallApp = (fileKey) => {
   return Request(url, 'POST', options)
 }
 
+// 安装插件文件
+export const InstallPlugin = (fileKey) => {
+  const options = {
+    item: fileKey,
+  }
+  const url = '/k/api/dev/plugin/import.json'
+  return Request(url, 'POST', options)
+}
+
 //上传文件 直接用fetch上传到本地kintone
 export const UploadFiles = (blob, name) => {
   const fd = new FormData()

@@ -3,9 +3,14 @@ import { useStore } from 'vuex'
 
 export default () => {
   const store = useStore()
+
   //所有数据
   const appsList = computed(() => {
     return store.state.storage.allApps.appsList
+  })
+
+  const pluginsList = computed(() => {
+    return store.state.storage.allApps.pluginsList
   })
 
   const error = computed(() => {
@@ -13,6 +18,7 @@ export default () => {
   })
   return {
     appsList,
+    pluginsList,
     error,
   }
 }

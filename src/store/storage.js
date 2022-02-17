@@ -1,12 +1,18 @@
 import { GetRecords } from '@/services/kintoneBackend'
-import { backendConfig, manageMapping, detailMapping } from '@/config'
+import { backendConfig, manageMapping, detailMapping, whiteListMapping } from '@/config'
 import { findKey } from '@/libs/utils'
 const { appid, status, statusValue, sort } = manageMapping
-const { appid: id, appName, icon, url, picTable } = detailMapping
-const detailFields = [id, appName, icon, url, picTable]
+const { appid: id, appName, icon, url, picTable, appType } = detailMapping
+const detailFields = [id, appName, icon, url, picTable, appType]
+const appTemplate = '应用模版'
+const pluginTemplate = '插件'
+
+const local = 'local'
+const jp = '日系'
 
 const state = {
   allApps: { appsList: [], error: false },
+  domainGroup: '',
 }
 
 const actions = {
@@ -26,7 +32,10 @@ const actions = {
         idMapping[appIdValue] = index
       }
 
-      const aggregatedData = records.map((app) => {
+      const plugins = []
+      const apps = []
+
+      for (const app of records) {
         const data = {}
         const index = idMapping[app[appid].value]
         const detail = detailRecords[index]
@@ -46,20 +55,42 @@ const actions = {
           }
         })
         data.$fromDetail = newDetail
-        return data
-      })
-      data.appsList = aggregatedData
+        if (detail[appType].value === pluginTemplate) {
+          plugins.push(data)
+        }
+        if (detail[appType].value === appTemplate) {
+          apps.push(data)
+        }
+      }
+      data.appsList = apps
+      data.pluginsList = plugins
     } catch {
       data.error = true
     }
     context.commit('SETALLAPPS', data)
     return data
   },
+
+  async getDomainGroup(context) {
+    const domain = document.domain
+    const id = backendConfig.whiteListAppId
+
+    const localQuery = `${whiteListMapping.groupName} = "${local}" and ${whiteListMapping.list} like "${domain}"`
+
+    const { records } = await GetRecords(id, [], localQuery)
+    const domainGRoup = records.length > 0 ? 'local' : 'jp'
+    context.commit('SETDOMAINGROUP', domainGRoup)
+    return domainGRoup
+  },
 }
 
 const mutations = {
   SETALLAPPS(state, value) {
     state.allApps = value
+  },
+
+  SETDOMAINGROUP(state, value) {
+    state.domainGroup = value
   },
 }
 

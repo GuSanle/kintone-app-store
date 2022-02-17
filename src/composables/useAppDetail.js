@@ -1,8 +1,10 @@
 import { markRaw, computed, isProxy, ref, reactive, toRefs } from 'vue'
 import { GetRecord, DownloadOssFiles, SetNewCount } from '@/services/kintoneBackend'
 import { backendConfig, detailMapping } from '@/config'
-import { UploadFiles, InstallApp } from '@/services/kintoneApi'
+import { UploadFiles, InstallApp, InstallPlugin } from '@/services/kintoneApi'
 import { findKey } from '@/libs/utils'
+const appTemplate = '应用模版'
+const pluginTemplate = '插件'
 
 export default (id) => {
   const appDetail = reactive({
@@ -51,7 +53,11 @@ export default (id) => {
     try {
       const blob = await DownloadOssFiles(appDetail.appDetailData.url)
       const { fileKey } = await UploadFiles(blob, appDetail.appDetailData.appName)
-      await InstallApp(fileKey)
+      if (appDetail.appDetailData.appType === appTemplate) {
+        await InstallApp(fileKey)
+      } else {
+        await InstallPlugin(fileKey)
+      }
       downloading.value = 'Success'
     } catch {
       downloading.value = 'Failed'

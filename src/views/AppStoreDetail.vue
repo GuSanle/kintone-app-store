@@ -27,7 +27,7 @@
                 @click="install"
               >安装</el-button>
               <el-button
-                v-if="appDetailData.url"
+                v-if="appDetailData.url && appDetailData.appType !== '插件'"
                 type="success"
                 plain
                 round
