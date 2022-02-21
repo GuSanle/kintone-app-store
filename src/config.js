@@ -3,6 +3,7 @@ export const backendConfig = {
   manageAppId: '3',
   detailAppId: '4',
   whiteListAppId: '7',
+  statisticsAppId: '8',
 }
 
 export const manageMapping = {
@@ -44,4 +45,10 @@ export const whiteListMapping = {
   groupName: 'groupName',
   type: 'type',
   list: 'list',
+}
+
+export const statisticsMapping = {
+  id: '$id',
+  lookup: 'Lookup',
+  domain: 'domain',
 }

@@ -25,6 +25,16 @@ export const GetRecords = (app, fields = [], query = '') => {
   return ProxyRequest(url, 'GET', params)
 }
 
+//下载统计
+export const AddDownload = (app, record) => {
+  const params = {
+    app,
+    record,
+  }
+  const url = '/k/v1/record.json'
+  return ProxyRequest(url, 'POST', params)
+}
+
 //更新计数器
 export const UpdateDownloadCount = (app, id, countField, newCount) => {
   const params = {

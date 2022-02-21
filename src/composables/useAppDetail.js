@@ -1,6 +1,6 @@
 import { markRaw, computed, isProxy, ref, reactive, toRefs } from 'vue'
-import { GetRecord, DownloadOssFiles, SetNewCount } from '@/services/kintoneBackend'
-import { backendConfig, detailMapping } from '@/config'
+import { GetRecord, DownloadOssFiles, SetNewCount, AddDownload } from '@/services/kintoneBackend'
+import { backendConfig, detailMapping, statisticsMapping } from '@/config'
 import { UploadFiles, InstallApp, InstallPlugin } from '@/services/kintoneApi'
 import { findKey } from '@/libs/utils'
 const appTemplate = '应用模版'
@@ -14,6 +14,7 @@ export default (id) => {
     loading: true,
   })
   const appid = backendConfig.detailAppId
+  const statisticsAppId = backendConfig.statisticsAppId
   const countField = detailMapping.installCount
 
   GetRecord(appid, id)
@@ -63,6 +64,17 @@ export default (id) => {
       downloading.value = 'Failed'
     }
     SetNewCount(appid, id, countField)
+    const record = {
+      [statisticsMapping.lookup]: {
+        value: id,
+      },
+      [statisticsMapping.domain]: {
+        value: document.domain,
+      },
+    }
+    AddDownload(statisticsAppId, record).catch((err) => {
+      console.log(err)
+    })
   }
 
   return {
