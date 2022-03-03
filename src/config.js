@@ -2,7 +2,7 @@ export const backendConfig = {
   domain: 'https://app-market.cybozu.cn',
   manageAppId: '3',
   detailAppId: '4',
-  whiteListAppId: '7',
+  domainListAppId: '9',
   statisticsAppId: '8',
 }
 
@@ -22,6 +22,7 @@ export const manageMapping = {
     notActive: '已下架',
     pending: '待定',
   },
+  group: 'group',
 }
 
 export const detailMapping = {
@@ -40,11 +41,10 @@ export const detailMapping = {
   appType: 'type',
 }
 
-export const whiteListMapping = {
+export const domainListMapping = {
   id: '$id',
   groupName: 'groupName',
-  type: 'type',
-  list: 'list',
+  domain: 'domain',
 }
 
 export const statisticsMapping = {

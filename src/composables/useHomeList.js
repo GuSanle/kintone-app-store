@@ -12,7 +12,7 @@ export default () => {
   const store = useStore()
   const appsList = store.state.storage.allApps.appsList
   const pluginsList = store.state.storage.allApps.pluginsList
-  console.log(store.state.storage.domainGroup, 'domainGroup')
+
   //所有数据
   const allAppsList = computed(() => {
     return store.state.storage.allApps.appsList

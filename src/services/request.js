@@ -6,7 +6,7 @@ import { backendConfig } from '@/config'
 export const ProxyRequest = (url, method, params) => {
   //请求拦截 增加token,json设置 等头部信息
   const headersWithtoken = {
-    'X-Cybozu-API-Token': `${process.env.VUE_APP_MANAGEAPPTOKEN},${process.env.VUE_APP_DETAILAPPTOKEN},${process.env.VUE_APP_WHITELISTAPPTOKEN},${process.env.VUE_APP_STATISTICSAPPTOKEN}`,
+    'X-Cybozu-API-Token': `${process.env.VUE_APP_MANAGEAPPTOKEN},${process.env.VUE_APP_DETAILAPPTOKEN},${process.env.VUE_APP_DOMAINLISTAPPTOKEN},${process.env.VUE_APP_STATISTICSAPPTOKEN}`,
   }
   if (/^(GET|DELETE)$/i.test(method)) {
     url = `${backendConfig.domain + url}?${qs.stringify(params)}`
