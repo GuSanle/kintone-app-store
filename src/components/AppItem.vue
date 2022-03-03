@@ -2,7 +2,12 @@
   <el-row v-if="type === 'M'">
     <el-col :span="1"></el-col>
     <el-col :span="5">
-      <el-image class="item" style="width: 65px; height: 65px" :src="appInfo.$fromDetail.icon" />
+      <el-image
+        class="item"
+        style="width: 65px; height: 65px"
+        @click="showDetail(appInfo.appid)"
+        :src="appInfo.$fromDetail.icon"
+      />
     </el-col>
     <el-col :span="16">
       <div class="app-title title-wrap">{{ appInfo.$fromDetail.appName }}</div>
@@ -15,7 +20,11 @@
   <el-row v-else>
     <el-col :span="1"></el-col>
     <el-col :span="4">
-      <el-image class="item-small" :src="appInfo.$fromDetail.icon"></el-image>
+      <el-image
+        class="item-small"
+        @click="showDetail(appInfo.appid)"
+        :src="appInfo.$fromDetail.icon"
+      ></el-image>
     </el-col>
     <el-col :span="18">
       <el-row>
@@ -34,7 +43,12 @@
   <el-row v-if="type === 'L'" style="padding: 10px 0 50px">
     <el-col :span="1"></el-col>
     <el-col :span="22">
-      <el-image :src="firstImage" class="img-middle" fit="cover" />
+      <el-image
+        :src="firstImage"
+        @click="showDetail(appInfo.appid)"
+        class="img-middle"
+        fit="cover"
+      />
     </el-col>
     <el-col :span="1"></el-col>
   </el-row>

@@ -6,10 +6,12 @@ const { appName: searchField } = detailMapping
 export default (keyword) => {
   const store = useStore()
   const appsList = store.state.storage.allApps.appsList
+  const pluginsList = store.state.storage.allApps.pluginsList
+  const allList = appsList.concat(pluginsList)
 
   //搜索数据
   const filterList = computed(() => {
-    return appsList.filter((item) => {
+    return allList.filter((item) => {
       return item.$fromDetail[searchField].indexOf(keyword.value) !== -1
     })
   })
