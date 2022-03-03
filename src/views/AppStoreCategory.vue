@@ -18,6 +18,8 @@
   <el-divider></el-divider>
   <div class="title">表单处理</div>
   <apps-carousel type="M" :apps="formList" v-bind="$attrs"></apps-carousel>
+  <el-divider></el-divider>
+  <license />
 </template>
 
 <script>
@@ -30,6 +32,7 @@ export default {
 import useCategoryAppList from '@/composables/useCategoryAppList'
 import appsCarousel from '@/components/AppsCarousel.vue'
 import appsPicCarousel from '@/components/AppsPicCarousel.vue'
+import license from '@/components/License.vue'
 const { allAppsList, chartsList, dataList, formList, error } = useCategoryAppList()
 </script>
 

@@ -1,0 +1,13 @@
+<template>
+  <el-link :href="href" target="_blank" type="primary">条款与条件 ></el-link>
+</template>
+
+<script>
+export default {
+  name: 'License',
+  inheritAttrs: false,
+}
+</script>
+<script setup>
+const href = "https://cybozudev.kf5.com/hc"
+</script>

@@ -23,6 +23,8 @@
       <h2 class="appstore-category-title">推荐下载</h2>
     </template>
   </apps-carousel>
+  <el-divider></el-divider>
+  <license />
 </template>
 <script>
 export default {
@@ -34,6 +36,8 @@ export default {
 import useHomeList from '@/composables/useHomeList'
 import appsCarousel from '@/components/AppsCarousel.vue'
 import appsPicCarousel from '@/components/AppsPicCarousel.vue'
+import license from '@/components/License.vue'
+
 const { allAppsList, recommendList, bannerList, hotList, midPicSwiperList, pluginRecommendList } = useHomeList()
 </script>
 

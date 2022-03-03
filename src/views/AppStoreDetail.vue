@@ -58,11 +58,14 @@
         <el-divider></el-divider>
       </el-row>
       <apps-pic-carousel type="S" v-if="picList.length > 0" :apps="picList" v-bind="$attrs" />
+      <div>{{ appDetailData.appType }}</div>
       <h2 class="recommend-title content">应用说明</h2>
       <div v-html="appDetailData.document"></div>
       <el-row>
-        <el-divider></el-divider>
+        <el-divider />
+        <license />
       </el-row>
+      <div style="height:10px"></div>
     </div>
     <div class="recommend">
       <apps-carousel type="M" :apps="filterList" v-bind="$attrs">
@@ -89,6 +92,7 @@ import useRecommendList from '@/composables/useRecommendList'
 import appsCarousel from '@/components/AppsCarousel.vue'
 import appsPicCarousel from '@/components/AppsPicCarousel.vue'
 import skeletonDetail from '@/components/SkeletonDetail.vue'
+import license from '@/components/License.vue'
 import { watch, ref } from 'vue'
 import { backendConfig, detailMapping } from '@/config'
 import { ElNotification } from 'element-plus'
