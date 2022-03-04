@@ -30,6 +30,12 @@ export const InstallPlugin = (fileKey) => {
   return Request(url, 'POST', options)
 }
 
+// 判断用户是否拥有浏览插件的能力，从而确认用户是否为管理员
+export const CheckAdminRights = () => {
+  const url = '/k/api/dev/plugin/list.json'
+  return Request(url, 'POST', {})
+}
+
 //上传文件 直接用fetch上传到本地kintone
 export const UploadFiles = (blob, name) => {
   const fd = new FormData()
