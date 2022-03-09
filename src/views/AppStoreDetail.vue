@@ -94,9 +94,11 @@ import appsPicCarousel from '@/components/AppsPicCarousel.vue'
 import skeletonDetail from '@/components/SkeletonDetail.vue'
 import license from '@/components/License.vue'
 import { watch, ref } from 'vue'
-import { backendConfig, detailMapping } from '@/config'
+import { backendConfig, detailMapping, statisticsMapping } from '@/config'
 import { ElNotification } from 'element-plus'
-import { SetNewCount } from '@/services/kintoneBackend'
+import { SetNewCount, AddDownload } from '@/services/kintoneBackend'
+const installField = '安装'
+const downloadField = '下载'
 
 const props = defineProps({
   id: {
@@ -110,6 +112,7 @@ const props = defineProps({
 //热门推荐数据
 const keyWord = ref(recommendWord)
 const { filterList } = useRecommendList(keyWord)
+const statisticsAppId = backendConfig.statisticsAppId
 
 //详情数据
 const { downloading, picList, appDetailData, error, loading, install } = useAppDetail(props.id)
@@ -154,6 +157,20 @@ const download = (link) => {
   const appid = backendConfig.detailAppId
   const countField = detailMapping.downloadCount
   SetNewCount(appid, props.id, countField)
+  const record = {
+    [statisticsMapping.lookup]: {
+      value: props.id,
+    },
+    [statisticsMapping.domain]: {
+      value: document.domain,
+    },
+    [statisticsMapping.type]: {
+      value: downloadField,
+    },
+  }
+  AddDownload(statisticsAppId, record).catch((err) => {
+    console.log(err)
+  })
   window.location.href = link
 }
 

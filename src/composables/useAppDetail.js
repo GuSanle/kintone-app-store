@@ -5,6 +5,8 @@ import { UploadFiles, InstallApp, InstallPlugin } from '@/services/kintoneApi'
 import { findKey } from '@/libs/utils'
 const appTemplate = '应用模版'
 const pluginTemplate = '插件'
+const installField = '安装'
+const downloadField = '下载'
 
 export default (id) => {
   const appDetail = reactive({
@@ -70,6 +72,9 @@ export default (id) => {
       },
       [statisticsMapping.domain]: {
         value: document.domain,
+      },
+      [statisticsMapping.type]: {
+        value: installField,
       },
     }
     AddDownload(statisticsAppId, record).catch((err) => {

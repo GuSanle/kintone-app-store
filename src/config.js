@@ -51,4 +51,5 @@ export const statisticsMapping = {
   id: '$id',
   lookup: 'Lookup',
   domain: 'domain',
+  type: 'type',
 }
