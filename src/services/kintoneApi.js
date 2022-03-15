@@ -36,6 +36,12 @@ export const CheckAdminRights = () => {
   return Request(url, 'POST', {})
 }
 
+// 判断用户是否属于管理员组
+export const getUserGroups = (code) => {
+  const url = '/v1/user/groups.json'
+  return Request(url, 'GET', { code })
+}
+
 //上传文件 直接用fetch上传到本地kintone
 export const UploadFiles = (blob, name) => {
   const fd = new FormData()

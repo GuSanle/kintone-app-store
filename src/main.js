@@ -4,7 +4,7 @@ import installElementPlus from '@/libs/element'
 import App from '@/App.vue'
 import $ from 'jquery'
 
-import { CheckAdminRights } from '@/services/kintoneApi'
+import { getUserGroups } from '@/services/kintoneApi'
 
 const button = `<div id='kintone-app-store-button'
   class="gaia-header-toolbar-config goog-inline-block goog-menu-button"
@@ -16,16 +16,28 @@ const button = `<div id='kintone-app-store-button'
   style="user-select: none;"
   ></div>`
 
+const { code } = kintone.getLoginUser()
+const adminGroupId = '7532782697181632512'
+
+const checkInAdmin = (groupInfo) => {
+  return groupInfo.id === adminGroupId
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-  CheckAdminRights()
+  getUserGroups(code)
     .then((resp) => {
-      if ($('#kintone-app-store-button').length <= 0) {
-        $('.gaia-header-toolbar-links').prepend(button)
+      const { groups: userGroups } = resp
+      const checkadmin = userGroups.filter(checkInAdmin)
+      const isAdmin = checkadmin.length > 0 ? true : false
+      if (isAdmin) {
+        if ($('#kintone-app-store-button').length <= 0) {
+          $('.gaia-header-toolbar-links').prepend(button)
+        }
+        const app = createApp(App)
+        installElementPlus(app)
+        app.use(store)
+        app.mount('#kintone-app-store-button')
       }
-      const app = createApp(App)
-      installElementPlus(app)
-      app.use(store)
-      app.mount('#kintone-app-store-button')
     })
     .catch(() => {
       return
