@@ -1,5 +1,14 @@
 <template>
-  <div class="goog-inline-block goog-menu-button-outer-box" @click="showDialog()">
+  <div class="sc-cVzyXs kEfCPK" @click="showDialog()">
+    <button class="sc-eyvILC gwZSxe sc-cVzyXs kEfCPK__button" type="button" title="App Store" aria-expanded="false"
+      aria-haspopup="true"><span role="img" aria-label="App Store" class="sc-eqUAAy kRUyJB"
+        style="width: 24px; height: 24px;">
+        <span aria-hidden="true"><img src="@/assets/icons/store.svg" alt class="appstore-img" />
+        </span></span></button>
+  </div>
+
+
+  <!-- <div class="goog-inline-block goog-menu-button-outer-box" @click="showDialog()">
     <div class="goog-inline-block goog-menu-button-inner-box">
       <div class="goog-inline-block goog-menu-button-caption">
         <span class="gaia-header-img gaia-header-img-settings">
@@ -8,7 +17,7 @@
       </div>
       <div class="goog-inline-block goog-menu-button-dropdown">&nbsp;</div>
     </div>
-  </div>
+  </div> -->
 
   <el-dialog top="10vh" v-model="centerDialogVisible" destroy-on-close custom-class="dialog">
     <app-store />

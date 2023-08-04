@@ -6,15 +6,7 @@ import $ from 'jquery'
 
 import { getUserGroups } from '@/services/kintoneApi'
 
-const button = `<div id='kintone-app-store-button'
-  class="gaia-header-toolbar-config goog-inline-block goog-menu-button"
-  title="打开商城"
-  role="button"
-  aria-expanded="false"
-  tabindex="0"
-  aria-haspopup="true"
-  style="user-select: none;"
-  ></div>`
+const button = `<li><div id='kintone-app-store-button'></div></li>`
 
 const { code } = kintone.getLoginUser()
 const adminGroupId = '7532782697181632512'
@@ -31,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const isAdmin = checkadmin.length > 0 ? true : false
       if (isAdmin) {
         if ($('#kintone-app-store-button').length <= 0) {
-          $('.gaia-header-toolbar-links').prepend(button)
+          $('.dhOPxC__menu-list:last').prepend(button)
         }
         const app = createApp(App)
         installElementPlus(app)
