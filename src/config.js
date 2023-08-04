@@ -1,9 +1,9 @@
 export const backendConfig = {
-  domain: 'https://app-market.cybozu.cn',
-  manageAppId: '3',
-  detailAppId: '4',
-  domainListAppId: '9',
-  statisticsAppId: '8',
+  domain: process.env.VUE_APP_BACKENDCONFIG_DOMAIN,
+  manageAppId: process.env.VUE_APP_BACKENDCONFIG_MANAGEAPPID,
+  detailAppId: process.env.VUE_APP_BACKENDCONFIG_DETAILAPPID,
+  domainListAppId: process.env.VUE_APP_BACKENDCONFIG_DOMAINLISTAPPID,
+  statisticsAppId: process.env.VUE_APP_BACKENDCONFIG_STATISTICSAPPID,
 }
 
 export const manageMapping = {
