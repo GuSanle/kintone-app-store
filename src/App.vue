@@ -6,19 +6,6 @@
         <span aria-hidden="true"><img src="@/assets/icons/store.svg" alt class="appstore-img" />
         </span></span></button>
   </div>
-
-
-  <!-- <div class="goog-inline-block goog-menu-button-outer-box" @click="showDialog()">
-    <div class="goog-inline-block goog-menu-button-inner-box">
-      <div class="goog-inline-block goog-menu-button-caption">
-        <span class="gaia-header-img gaia-header-img-settings">
-          <img src="@/assets/icons/store.svg" alt class="appstore-img" />
-        </span>
-      </div>
-      <div class="goog-inline-block goog-menu-button-dropdown">&nbsp;</div>
-    </div>
-  </div> -->
-
   <el-dialog top="10vh" v-model="centerDialogVisible" destroy-on-close custom-class="dialog">
     <app-store />
   </el-dialog>
