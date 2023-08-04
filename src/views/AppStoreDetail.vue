@@ -18,38 +18,13 @@
           </el-row>
           <el-row>
             <el-col class="btn-space">
-              <el-button
-                v-if="appDetailData.url"
-                type="primary"
-                plain
-                round
-                size="mini"
-                @click="install"
-              >安装</el-button>
-              <el-button
-                v-if="appDetailData.url && appDetailData.appType !== '插件'"
-                type="success"
-                plain
-                round
-                size="mini"
-                @click="download(appDetailData.url)"
-              >下载</el-button>
-              <el-button
-                v-if="appDetailData.docLink"
-                @click="gotoLink(appDetailData.docLink)"
-                type="warning"
-                plain
-                round
-                size="mini"
-              >文档</el-button>
-              <el-button
-                v-if="appDetailData.csvLink"
-                @click="downloadCsv(appDetailData.csvLink)"
-                type="danger"
-                plain
-                round
-                size="mini"
-              >demo数据</el-button>
+              <el-button v-if="appDetailData.url" type="primary" plain round size="small" @click="install">安装</el-button>
+              <el-button v-if="appDetailData.url && appDetailData.appType !== '插件'" type="success" plain round
+                size="small" @click="download(appDetailData.url)">下载</el-button>
+              <el-button v-if="appDetailData.docLink" @click="gotoLink(appDetailData.docLink)" type="warning" plain round
+                size="small">文档</el-button>
+              <el-button v-if="appDetailData.csvLink" @click="downloadCsv(appDetailData.csvLink)" type="danger" plain
+                round size="small">demo数据</el-button>
             </el-col>
           </el-row>
         </el-col>

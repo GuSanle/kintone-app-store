@@ -26,15 +26,10 @@
   </el-row>
   <div class="block pagination">
     <span v-show="!paginationInfo.isHide">共{{ paginationInfo.total }}条</span>
-    <el-pagination
-      :hide-on-single-page="paginationInfo.isHide"
-      :page-size="paginationInfo.pageSize"
-      @current-change="handleCurrentChange"
-      @prev-click="paginationInfo.currentPage - 1"
-      @next-click="paginationInfo.currentPage + 1"
-      layout="prev, pager, next"
-      :total="paginationInfo.total"
-    ></el-pagination>
+    <el-pagination :hide-on-single-page="paginationInfo.isHide" :page-size="paginationInfo.pageSize"
+      @current-change="handleCurrentChange" @prev-click="paginationInfo.currentPage - 1"
+      @next-click="paginationInfo.currentPage + 1" layout="prev, pager, next"
+      :total="paginationInfo.total"></el-pagination>
   </div>
 </template>
 
@@ -89,11 +84,11 @@ defineExpose({
   font-size: 16px;
 }
 
-:deep(.el-input__inner) {
+/* :deep(.el-input__inner) {
   background-color: #eaeaea;
   border: 0;
   border-radius: 10px;
-}
+} */
 
 .pagination {
   text-align: center;

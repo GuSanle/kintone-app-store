@@ -6,7 +6,7 @@
         <span aria-hidden="true"><img src="@/assets/icons/store.svg" alt class="appstore-img" />
         </span></span></button>
   </div>
-  <el-dialog top="10vh" v-model="centerDialogVisible" destroy-on-close custom-class="dialog">
+  <el-dialog top="10vh" v-model="centerDialogVisible" destroy-on-close class="dialog">
     <app-store />
   </el-dialog>
 </template>
