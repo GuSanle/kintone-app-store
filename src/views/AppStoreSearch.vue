@@ -2,11 +2,7 @@
   <el-row>
     <el-col :span="12" class="appstore-title">全部</el-col>
     <el-col :span="11">
-      <el-input placeholder="请输入内容" v-model="keyWord">
-        <template #prefix>
-          <i class="el-input__icon el-icon-search"></i>
-        </template>
-      </el-input>
+      <input class="icon-search" placeholder="请输入内容" v-model="keyWord" />
     </el-col>
     <el-col :span="1"></el-col>
   </el-row>
@@ -24,7 +20,7 @@
       <app-item :appInfo="appInfo" v-bind="$attrs" type="L" />
     </el-col>
   </el-row>
-  <div class="block pagination">
+  <div class="pagination">
     <span v-show="!paginationInfo.isHide">共{{ paginationInfo.total }}条</span>
     <el-pagination :hide-on-single-page="paginationInfo.isHide" :page-size="paginationInfo.pageSize"
       @current-change="handleCurrentChange" @prev-click="paginationInfo.currentPage - 1"
@@ -76,22 +72,27 @@ defineExpose({
 </script>
 
 <style scoped>
-.search {
-  width: 200px;
-}
-
-.el-input {
+.icon-search {
+  display: inline-block;
+  background-image: url("@/assets/icons/search.svg");
+  background-repeat: no-repeat;
+  background-position: 10px 50%;
+  background-size: 20px 20px;
+  width: 300px;
+  height: 40px;
+  padding: 0 30px 0 40px;
+  border: 0;
+  border-radius: 10px;
+  background-color: #eaeaea;
   font-size: 16px;
 }
 
-/* :deep(.el-input__inner) {
-  background-color: #eaeaea;
-  border: 0;
-  border-radius: 10px;
-} */
-
 .pagination {
   text-align: center;
+}
+
+.el-pagination {
+  justify-content: center;
 }
 
 .search-title {
