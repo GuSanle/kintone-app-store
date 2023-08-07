@@ -1,5 +1,3 @@
-import { computed } from 'vue'
-import { storeToRefs } from 'pinia'
 import { useAppStore } from '@/stores/app'
 import { manageMapping } from '@/config'
 const { category: searchField } = manageMapping

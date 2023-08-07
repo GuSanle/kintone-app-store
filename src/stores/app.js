@@ -1,4 +1,3 @@
-import { defineStore } from 'pinia'
 import { GetRecords } from '@/services/kintoneBackend'
 import { backendConfig, manageMapping, detailMapping, domainListMapping } from '@/config'
 import { findKey } from '@/libs/utils'

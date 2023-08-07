@@ -39,7 +39,6 @@ export default {
 <script setup>
 import useSearchList from '@/composables/useSearchList'
 import appItem from '@/components/AppItem.vue'
-import { ref, computed, reactive } from 'vue'
 import { groupingArray } from '@/libs/utils'
 
 const paginationInfo = reactive({

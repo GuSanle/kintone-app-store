@@ -1,4 +1,3 @@
-import { markRaw, computed, isProxy, ref, reactive, toRefs } from 'vue'
 import { GetRecord, DownloadOssFiles, SetNewCount, AddDownload } from '@/services/kintoneBackend'
 import { backendConfig, detailMapping, statisticsMapping } from '@/config'
 import { UploadFiles, InstallApp, InstallPlugin } from '@/services/kintoneApi'

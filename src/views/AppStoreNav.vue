@@ -22,7 +22,6 @@ export default {
 }
 </script>
 <script setup>
-import { computed } from 'vue'
 const logoSrc = 'https://dev-center-store.oss-cn-shanghai.aliyuncs.com/assets/images/dc-appstore-logo.png'
 const navMapping = {
   home: '0',

@@ -12,8 +12,6 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-
 import appStore from '_v/AppStore.vue'
 
 const centerDialogVisible = ref(false)
