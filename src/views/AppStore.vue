@@ -5,7 +5,7 @@
     </el-aside>
     <el-main class="right-overflow">
       <!-- <transition name="el-fade-in"> -->
-      <el-empty v-if="error" description="服务器请求失败"></el-empty>
+      <el-empty v-if="error" :description="$t('connection-failed')"></el-empty>
       <skeleton-home v-else-if="loading" />
       <div v-else-if="viewShow === 'home'" key="home">
         <app-store-home @chosenId="changeId" />

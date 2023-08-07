@@ -54,6 +54,7 @@ module.exports = defineConfig({
       alias: {
         '@': resolve(__dirname, 'src'),
         _v: resolve(__dirname, 'src/views'),
+        'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js',
       },
     },
   },
