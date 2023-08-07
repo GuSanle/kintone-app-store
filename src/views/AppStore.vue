@@ -12,7 +12,9 @@
       </div>
       <div v-else-if="viewShow === 'detail'" key="detail">
         <div class="detail-header">
-          <el-link :underline="false" class="el-icon-back" @click="viewShow = navType"></el-link>
+          <el-icon>
+            <Back @click="viewShow = navType" class="icon-back" />
+          </el-icon>
         </div>
         <app-store-detail :id="id" @chosenId="changeId" />
       </div>
@@ -99,9 +101,10 @@ defineExpose({
   --el-link-default-active-color: var(--el-text-color-regular);
 }
 
-.el-icon-back {
-  z-index: 999;
-  margin: 20px 0 15px 20px;
+.icon-back {
+  position: absolute;
+  top: 50%;
+  margin: 15px 0 0 40px;
   font-weight: 700;
   font-size: 25px;
 }
@@ -109,6 +112,7 @@ defineExpose({
 .detail-header {
   position: absolute;
   z-index: 99;
+  height: 60px;
   width: 938px;
   margin: -50px -20px;
   backdrop-filter: blur(100px);

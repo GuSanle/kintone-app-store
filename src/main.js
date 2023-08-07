@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import store from '@/store/store'
 import installElementPlus from '@/libs/element'
+import installElementPlusIcon from '@/libs/element_icons'
 import App from '@/App.vue'
 import $ from 'jquery'
 
@@ -27,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         const app = createApp(App)
         installElementPlus(app)
+        installElementPlusIcon(app)
         app.use(store)
         app.mount('#kintone-app-store-button')
       }
