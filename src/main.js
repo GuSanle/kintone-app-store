@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import store from '@/store/store'
 import installElementPlus from '@/libs/element'
 import installElementPlusIcon from '@/libs/element_icons'
+import { createI18n } from 'vue-i18n'
 import App from '@/App.vue'
 import $ from 'jquery'
 
@@ -9,7 +10,7 @@ import { getUserGroups } from '@/services/kintoneApi'
 
 const button = `<li><div id='kintone-app-store-button'></div></li>`
 
-const { code } = kintone.getLoginUser()
+const { code, language } = kintone.getLoginUser()
 const adminGroupId = '7532782697181632512'
 
 const checkInAdmin = (groupInfo) => {
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const app = createApp(App)
         installElementPlus(app)
         installElementPlusIcon(app)
+        app.use(i18n)
         app.use(store)
         app.mount('#kintone-app-store-button')
       }
