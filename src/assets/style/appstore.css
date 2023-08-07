@@ -22,11 +22,11 @@
 
 .el-dialog__close {
   z-index: 999;
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   color: #fff !important;
-  font-size: 20px;
-  line-height: 28px;
+  font-size: 18px;
+  line-height: 26px;
   vertical-align: bottom;
   background-color: #4e4e4e;
   border-radius: 50%;
