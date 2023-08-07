@@ -2,6 +2,9 @@ const { defineConfig } = require('@vue/cli-service')
 const { resolve } = require('path')
 const { readFileSync } = require('fs')
 const KintoneUploaderWebpackPlugin = require('./webpackPlugins/kintoneUploader')
+const AutoImport = require('unplugin-auto-import/webpack')
+const Components = require('unplugin-vue-components/webpack')
+const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
 
 const url = process.env.BASE_URL
 const user = process.env.USER_NAME
@@ -57,5 +60,14 @@ module.exports = defineConfig({
         'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js',
       },
     },
+    plugins: [
+      AutoImport({
+        imports: ['vue', 'pinia'],
+        resolvers: [ElementPlusResolver()],
+      }),
+      Components({
+        resolvers: [ElementPlusResolver()],
+      }),
+    ],
   },
 })

@@ -1,5 +1,4 @@
 import { createApp } from 'vue'
-import installElementPlus from '@/libs/element'
 import installElementPlusIcon from '@/libs/element_icons'
 import i18n from '@/libs/i18n'
 import { createPinia } from 'pinia'
@@ -28,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
           $('.dhOPxC__menu-list:last').prepend(button)
         }
         const app = createApp(App)
-        installElementPlus(app)
         installElementPlusIcon(app)
         app.use(createPinia())
         app.use(i18n)
