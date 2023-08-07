@@ -1,7 +1,5 @@
-import { createApp } from 'vue'
 import installElementPlusIcon from '@/libs/element_icons'
 import i18n from '@/libs/i18n'
-import { createPinia } from 'pinia'
 import App from '@/App.vue'
 import $ from 'jquery'
 

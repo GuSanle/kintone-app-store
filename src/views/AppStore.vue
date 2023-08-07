@@ -35,14 +35,12 @@ export default {
 }
 </script>
 <script setup>
-import { ref } from 'vue'
 import appStoreHome from '_v/AppStoreHome.vue'
 import appStoreNav from '_v/AppStoreNav.vue'
 import appStoreSearch from '_v/AppStoreSearch.vue'
 import appStoreCategory from '_v/AppStoreCategory.vue'
 import appStoreDetail from '_v/AppStoreDetail.vue'
 import skeletonHome from '@/components/SkeletonHome.vue'
-import { storeToRefs } from 'pinia'
 import { useAppStore } from '@/stores/app'
 const appStore = useAppStore()
 const { allApps } = storeToRefs(appStore)

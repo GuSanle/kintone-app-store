@@ -3,12 +3,8 @@
   <el-carousel indicator-position="none" :autoplay="autoplay" :height="itemHeight">
     <el-carousel-item v-for="(item, index) in appListForView.length" :key="item">
       <el-row :gutter="layoutStyle.gutter">
-        <el-col
-          v-for="appItemInfo in appListForView[index]"
-          :key="appItemInfo.id"
-          :span="layoutStyle.span"
-          @click.stop="showDetail(appItemInfo.appid)"
-        >
+        <el-col v-for="appItemInfo in appListForView[index]" :key="appItemInfo.id" :span="layoutStyle.span"
+          @click.stop="showDetail(appItemInfo.appid)">
           <el-image :class="typeClass" :src="appItemInfo[picField]" fit="cover"></el-image>
         </el-col>
       </el-row>
@@ -24,7 +20,6 @@ export default {
 </script>
 
 <script setup>
-import { computed } from 'vue'
 import { groupingArray } from '@/libs/utils'
 
 const props = defineProps({

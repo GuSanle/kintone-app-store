@@ -21,7 +21,6 @@ export default {
 
 <script setup>
 import appItem from '@/components/AppItem.vue'
-import { toRefs, computed, toRaw } from 'vue'
 import { groupingArray } from '@/libs/utils'
 
 const props = defineProps({

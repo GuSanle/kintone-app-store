@@ -25,3 +25,7 @@ npm run build
 首页 javascript 自定义
 https://localhost:8080/js/chunk-vendors.js
 https://localhost:8080/js/app.js
+
+
+###  unplugin-auto-import
+auto import vue , pinia, elemenet ui
