@@ -17,7 +17,6 @@
     "vue-i18n": "9"
   },
   "devDependencies": {
-    "@intlify/unplugin-vue-i18n": "^0.12.2",
     "@vue/cli-plugin-babel": "~5.0.0-rc.1",
     "@vue/cli-service": "~5.0.0-rc.1",
     "@vue/compiler-sfc": "3.3.4",
@@ -27,6 +26,8 @@
     "prettier-eslint": "^15.0.1",
     "recursive-readdir": "^2.2.2",
     "sass": "^1.27.0",
-    "sass-loader": "^13.3.2"
+    "sass-loader": "^13.3.2",
+    "unplugin-auto-import": "^0.16.6",
+    "unplugin-vue-components": "^0.25.1"
   }
 }
