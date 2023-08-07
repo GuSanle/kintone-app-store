@@ -40,20 +40,22 @@ import appStoreHome from '_v/AppStoreHome.vue'
 import appStoreNav from '_v/AppStoreNav.vue'
 import appStoreSearch from '_v/AppStoreSearch.vue'
 import appStoreCategory from '_v/AppStoreCategory.vue'
-import { useStore } from 'vuex'
 import appStoreDetail from '_v/AppStoreDetail.vue'
 import skeletonHome from '@/components/SkeletonHome.vue'
+import { storeToRefs } from 'pinia'
+import { useAppStore } from '@/stores/app'
+const appStore = useAppStore()
+const { allApps } = storeToRefs(appStore)
 
 //viewShow detail， search， home， category
 
-const store = useStore()
 const loading = ref(true)
 const error = ref(false)
-store.dispatch('getAllApps').then((resp) => {
+appStore.getAllApps().then(() => {
   loading.value = false
-  error.value = resp.error
+  error.value = allApps.value.error
 })
-store.dispatch('getDomainGroup').then((resp) => {
+appStore.getDomainGroup().then((resp) => {
 
 })
 const viewShow = ref('home')

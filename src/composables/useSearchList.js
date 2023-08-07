@@ -1,12 +1,14 @@
 import { computed } from 'vue'
-import { useStore } from 'vuex'
+import { storeToRefs } from 'pinia'
+import { useAppStore } from '@/stores/app'
 import { detailMapping } from '@/config'
 const { appName: searchField } = detailMapping
 
 export default (keyword) => {
-  const store = useStore()
-  const appsList = store.state.storage.allApps.appsList
-  const pluginsList = store.state.storage.allApps.pluginsList
+  const appStore = useAppStore()
+  const { allApps } = storeToRefs(appStore)
+  const appsList = allApps.value.appsList
+  const pluginsList = allApps.value.pluginsList
   const allList = appsList.concat(pluginsList)
 
   //搜索数据
@@ -17,7 +19,7 @@ export default (keyword) => {
   })
 
   const error = computed(() => {
-    return store.state.storage.allApps.error
+    return allApps.value.error
   })
   return {
     filterList,

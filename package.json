@@ -11,10 +11,10 @@
     "core-js": "^3.8.3",
     "element-plus": "^2.3.9",
     "jquery": "^3.6.0",
+    "pinia": "^2.1.6",
     "qs": "^6.10.1",
     "vue": "^3.2.13",
-    "vue-i18n": "9",
-    "vuex": "^4.0.2"
+    "vue-i18n": "9"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.0-rc.1",
