@@ -1,8 +1,8 @@
 import { createApp } from 'vue'
-import store from '@/store/store'
 import installElementPlus from '@/libs/element'
 import installElementPlusIcon from '@/libs/element_icons'
-import { createI18n } from 'vue-i18n'
+// import { createI18n } from 'vue-i18n'
+import { createPinia } from 'pinia'
 import App from '@/App.vue'
 import $ from 'jquery'
 
@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const app = createApp(App)
         installElementPlus(app)
         installElementPlusIcon(app)
-        app.use(i18n)
-        app.use(store)
+        app.use(createPinia())
+        // app.use(i18n)
         app.mount('#kintone-app-store-button')
       }
     })

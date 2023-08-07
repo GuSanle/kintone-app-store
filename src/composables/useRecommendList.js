@@ -1,11 +1,14 @@
 import { computed } from 'vue'
-import { useStore } from 'vuex'
+import { storeToRefs } from 'pinia'
+import { useAppStore } from '@/stores/app'
 import { manageMapping } from '@/config'
 const { recommend: searchField } = manageMapping
 
 export default (keyword) => {
-  const store = useStore()
-  const appsList = store.state.storage.allApps.appsList
+  const appStore = useAppStore()
+  const { allApps } = storeToRefs(appStore)
+  const appsList = allApps.value.appsList
+
   //搜索数据 多选框的数据搜索
   const filterList = computed(() => {
     return appsList.filter((item) => {
@@ -14,7 +17,7 @@ export default (keyword) => {
   })
 
   const error = computed(() => {
-    return store.state.storage.allApps.error
+    return allApps.value.error
   })
   return {
     filterList,

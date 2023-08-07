@@ -1,5 +1,6 @@
 import { computed } from 'vue'
-import { useStore } from 'vuex'
+import { storeToRefs } from 'pinia'
+import { useAppStore } from '@/stores/app'
 import { manageMapping } from '@/config'
 const { category: searchField } = manageMapping
 
@@ -8,11 +9,13 @@ const keywordData = '数据处理'
 const keywordForm = '表单处理'
 
 export default () => {
-  const store = useStore()
-  const appsList = store.state.storage.allApps.appsList
+  const appStore = useAppStore()
+  const { allApps } = storeToRefs(appStore)
+  const appsList = allApps.value.appsList
+
   //所有数据
   const allAppsList = computed(() => {
-    return store.state.storage.allApps.appsList
+    return appsList
   })
 
   //图表
@@ -35,7 +38,7 @@ export default () => {
   })
 
   const error = computed(() => {
-    return store.state.storage.allApps.error
+    return allApps.value.error
   })
   return {
     allAppsList,

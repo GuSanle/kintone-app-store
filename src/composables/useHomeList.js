@@ -1,5 +1,6 @@
 import { computed } from 'vue'
-import { useStore } from 'vuex'
+import { storeToRefs } from 'pinia'
+import { useAppStore } from '@/stores/app'
 import { manageMapping } from '@/config'
 const { recommend, homeDisplay } = manageMapping
 
@@ -9,13 +10,14 @@ const keyWordBanner = '大图轮播'
 const keyWordMidPicSwiper = '中图轮播'
 
 export default () => {
-  const store = useStore()
-  const appsList = store.state.storage.allApps.appsList
-  const pluginsList = store.state.storage.allApps.pluginsList
+  const appStore = useAppStore()
+  const { allApps } = storeToRefs(appStore)
+  const appsList = allApps.value.appsList
+  const pluginsList = allApps.value.pluginsList
 
   //所有数据
   const allAppsList = computed(() => {
-    return store.state.storage.allApps.appsList
+    return appsList
   })
 
   //热门应用
@@ -54,7 +56,7 @@ export default () => {
   })
 
   const error = computed(() => {
-    return store.state.storage.allApps.error
+    return allApps.value.error
   })
   return {
     allAppsList,
