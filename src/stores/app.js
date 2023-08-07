@@ -84,7 +84,6 @@ export const useAppStore = defineStore('app', {
         this.allApps.appsList = apps
         this.allApps.pluginsList = plugins
       } catch {
-        console.log('got')
         this.allApps.error = true
       }
     },
