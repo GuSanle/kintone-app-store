@@ -9,7 +9,7 @@ const pluginTemplate = '插件'
 const total = '全部'
 
 const _domainGroup = async () => {
-  const domain = document.domain
+  const domain = window.location.hostname
   const id = backendConfig.domainListAppId
 
   const query = `${domainListMapping.domain} = "${domain}" limit 1`

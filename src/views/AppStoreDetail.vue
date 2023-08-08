@@ -136,7 +136,7 @@ const download = (link) => {
       value: props.id,
     },
     [statisticsMapping.domain]: {
-      value: document.domain,
+      value: window.location.hostname,
     },
     [statisticsMapping.type]: {
       value: downloadField,

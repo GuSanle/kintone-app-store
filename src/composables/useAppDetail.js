@@ -70,7 +70,7 @@ export default (id) => {
         value: id,
       },
       [statisticsMapping.domain]: {
-        value: document.domain,
+        value: window.location.hostname,
       },
       [statisticsMapping.type]: {
         value: installField,
