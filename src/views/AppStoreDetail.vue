@@ -70,10 +70,9 @@ import appsPicCarousel from '@/components/AppsPicCarousel.vue'
 import skeletonDetail from '@/components/SkeletonDetail.vue'
 import license from '@/components/License.vue'
 import { backendConfig, detailMapping, statisticsMapping } from '@/config'
-import { ElNotification } from 'element-plus'
 import { SetNewCount, AddDownload } from '@/services/kintoneBackend'
-const installField = '安装'
-const downloadField = '下载'
+const installField = 'install'
+const downloadField = 'download'
 
 const props = defineProps({
   id: {

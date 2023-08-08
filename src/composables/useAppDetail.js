@@ -4,8 +4,8 @@ import { UploadFiles, InstallApp, InstallPlugin } from '@/services/kintoneApi'
 import { findKey } from '@/libs/utils'
 const appTemplate = '应用模版'
 const pluginTemplate = '插件'
-const installField = '安装'
-const downloadField = '下载'
+const installField = 'install'
+const downloadField = 'download'
 
 export default (id) => {
   const appDetail = reactive({
