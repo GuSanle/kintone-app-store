@@ -2,7 +2,7 @@
   <teleport to="#container-main" v-if="downloading === 'Downloading'">
     <div class="cover" v-loading="downloading === 'Downloading'"></div>
   </teleport>
-  <el-empty v-if="error" description="服务器请求失败"></el-empty>
+  <el-empty v-if="error" :description="$t('connection-failed')"></el-empty>
   <skeleton-detail v-else-if="loading" class="detail-main" />
   <div v-else class="detail">
     <div class="detail-main">
@@ -18,13 +18,14 @@
           </el-row>
           <el-row>
             <el-col class="btn-space">
-              <el-button v-if="appDetailData.url" type="primary" plain round size="small" @click="install">安装</el-button>
+              <el-button v-if="appDetailData.url" type="primary" plain round size="small" @click="install">{{
+                $t('install') }}</el-button>
               <el-button v-if="appDetailData.url && appDetailData.appType !== '插件'" type="success" plain round
-                size="small" @click="download(appDetailData.url)">下载</el-button>
+                size="small" @click="download(appDetailData.url)">{{ $t('download') }}</el-button>
               <el-button v-if="appDetailData.docLink" @click="gotoLink(appDetailData.docLink)" type="warning" plain round
-                size="small">文档</el-button>
+                size="small">{{ $t('docment') }}</el-button>
               <el-button v-if="appDetailData.csvLink" @click="downloadCsv(appDetailData.csvLink)" type="danger" plain
-                round size="small">demo数据</el-button>
+                round size="small">{{ $t('demo_data') }}</el-button>
             </el-col>
           </el-row>
         </el-col>
@@ -34,7 +35,7 @@
       </el-row>
       <apps-pic-carousel type="S" v-if="picList.length > 0" :apps="picList" v-bind="$attrs" />
       <div>{{ appDetailData.appType }}</div>
-      <h2 class="recommend-title content">应用说明</h2>
+      <h2 class="recommend-title content">{{ $t('intro') }}</h2>
       <div v-html="appDetailData.document"></div>
       <el-row>
         <el-divider />
@@ -45,7 +46,7 @@
     <div class="recommend">
       <apps-carousel type="M" :apps="filterList" v-bind="$attrs">
         <template #title>
-          <h2 class="recommend-title">推荐应用</h2>
+          <h2 class="recommend-title">{{ $t('recommended') }}</h2>
         </template>
       </apps-carousel>
     </div>

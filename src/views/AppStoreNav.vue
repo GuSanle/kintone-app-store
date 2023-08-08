@@ -1,18 +1,18 @@
 <template>
   <el-image class="img-logo" :src="logoSrc"></el-image>
-  <div class="logo-title">kintone应用商城</div>
+  <div class="logo-title">{{ $t('kintone-app-store') }}</div>
   <el-menu :default-active="navIndex" class="menu">
     <el-menu-item index="0" @click="changeView('home')">
       <i class="home"></i>
-      <template #title>首页</template>
+      <template #title>{{ $t('home') }}</template>
     </el-menu-item>
     <el-menu-item index="1" @click="changeView('category')">
       <i class="hot"></i>
-      <template #title>分类</template>
+      <template #title>{{ $t('category') }}</template>
     </el-menu-item>
     <el-menu-item index="2" @click="changeView('search')">
       <i class="all"></i>
-      <template #title>搜索</template>
+      <template #title>{{ $t('search') }}</template>
     </el-menu-item>
   </el-menu>
 </template>

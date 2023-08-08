@@ -1,5 +1,5 @@
 <template>
-  <el-link :href="href" target="_blank" type="primary">条款与条件 ></el-link>
+  <el-link :href="href" target="_blank" type="primary">{{ $t('privacy') }} ></el-link>
 </template>
 
 <script>

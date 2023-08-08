@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-row>
-      <el-col :span="24" class="appstore-title">分类</el-col>
+      <el-col :span="24" class="appstore-title">{{ $t('category') }}</el-col>
     </el-row>
     <el-row class="divider-space">
       <el-divider></el-divider>
@@ -9,14 +9,14 @@
   </div>
   <apps-pic-carousel type="S" :clickable="true" :apps="chartsList" v-bind="$attrs">
     <template #title>
-      <div class="title">图表</div>
+      <div class="title">{{ $t('chart') }}</div>
     </template>
   </apps-pic-carousel>
   <el-divider></el-divider>
-  <div class="title">数据处理</div>
+  <div class="title">{{ $t('data_processing') }}</div>
   <apps-carousel type="M" :apps="dataList" v-bind="$attrs"></apps-carousel>
   <el-divider></el-divider>
-  <div class="title">表单处理</div>
+  <div class="title">{{ $t('form_processing') }}</div>
   <apps-carousel type="M" :apps="formList" v-bind="$attrs"></apps-carousel>
   <el-divider></el-divider>
   <license />

@@ -8,7 +8,7 @@
     <el-col :span="16">
       <div class="app-title title-wrap">{{ appInfo.$fromDetail.appName }}</div>
       <slot name="right">
-        <button @click.stop="showDetail(appInfo.appid)" class="view-button">查看</button>
+        <button @click.stop="showDetail(appInfo.appid)" class="view-button">{{ $t('view') }}</button>
       </slot>
     </el-col>
     <el-col :span="2"></el-col>
@@ -25,7 +25,7 @@
         </el-col>
         <el-col :span="8" :push="2">
           <slot name="right">
-            <button @click.stop="showDetail(appInfo.appid)" class="view-button">查看</button>
+            <button @click.stop="showDetail(appInfo.appid)" class="view-button">{{ $t('view') }}</button>
           </slot>
         </el-col>
       </el-row>

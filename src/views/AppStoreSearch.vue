@@ -1,8 +1,8 @@
 <template>
   <el-row>
-    <el-col :span="12" class="appstore-title">全部</el-col>
+    <el-col :span="12" class="appstore-title">{{ $t('all') }}</el-col>
     <el-col :span="11">
-      <input class="icon-search" placeholder="请输入内容" v-model="keyWord" />
+      <input class="icon-search" :placeholder="$t('placeholder')" v-model="keyWord" />
     </el-col>
     <el-col :span="1"></el-col>
   </el-row>
@@ -11,8 +11,8 @@
   </el-row>
   <el-row :gutter="20">
     <el-col :span="24">
-      <span class="search-title" v-show="keyWord != ''">“{{ keyWord }}”的搜索结果:</span>
-      <el-empty v-if="paginationInfo.total === 0" description="暂无数据"></el-empty>
+      <span class="search-title" v-show="keyWord != ''">“{{ keyWord }}”{{ $t('search_result') }}:</span>
+      <el-empty v-if="paginationInfo.total === 0" :description="$t('no_result')"></el-empty>
     </el-col>
   </el-row>
   <el-row :gutter="20">
@@ -21,7 +21,7 @@
     </el-col>
   </el-row>
   <div class="pagination">
-    <span v-show="!paginationInfo.isHide">共{{ paginationInfo.total }}条</span>
+    <span v-show="!paginationInfo.isHide">{{ $t('total') }}>{{ paginationInfo.total }}{{ $t('article') }}></span>
     <el-pagination :hide-on-single-page="paginationInfo.isHide" :page-size="paginationInfo.pageSize"
       @current-change="handleCurrentChange" @prev-click="paginationInfo.currentPage - 1"
       @next-click="paginationInfo.currentPage + 1" layout="prev, pager, next"
