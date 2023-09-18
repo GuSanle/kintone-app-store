@@ -81,10 +81,7 @@ const firstImage = computed(() => {
   return picList.length > 0 ? picList[0].value[key].value : defaultImage
 })
 
-defineExpose({
-  firstImage,
-  showDetail,
-})
+
 </script>
 <style scoped>
 .app-title {

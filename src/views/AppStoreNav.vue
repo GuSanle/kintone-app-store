@@ -46,11 +46,7 @@ const changeView = (val) => {
   emit('changeNav', val)
 }
 
-defineExpose({
-  logoSrc,
-  navIndex,
-  changeView,
-})
+
 </script>
 
 <style scoped>

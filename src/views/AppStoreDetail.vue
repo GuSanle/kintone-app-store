@@ -152,17 +152,7 @@ const downloadCsv = (link) => {
   window.location.href = link
 }
 
-defineExpose({
-  error,
-  appDetailData,
-  downloading,
-  picList,
-  filterList,
-  loading,
-  install,
-  gotoLink,
-  download
-})
+
 </script>
 <style scoped>
 .detail {

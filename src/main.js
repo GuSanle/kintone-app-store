@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const isAdmin = checkadmin.length > 0 ? true : false
       if (isAdmin) {
         if ($('#kintone-app-store-button').length <= 0) {
-          $('.dhOPxC__menu-list:last').prepend(button)
+          $('.jvrOAb__menu-list:last').prepend(button)
         }
         const app = createApp(App)
         installElementPlusIcon(app)

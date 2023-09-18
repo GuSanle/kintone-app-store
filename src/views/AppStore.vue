@@ -70,15 +70,7 @@ const changeView = (val) => {
   navType.value = val
 }
 
-defineExpose({
-  loading,
-  error,
-  viewShow,
-  navType,
-  id,
-  changeId,
-  changeView,
-})
+
 </script>
 
 <style scoped>

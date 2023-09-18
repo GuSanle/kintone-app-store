@@ -62,12 +62,7 @@ const paginationList = computed(() => {
 const handleCurrentChange = (val) => {
   paginationInfo.currentPage = val
 }
-defineExpose({
-  keyWord,
-  paginationList,
-  paginationInfo,
-  handleCurrentChange,
-})
+
 </script>
 
 <style scoped>

@@ -78,13 +78,7 @@ const showDetail = (id) => {
     emit('chosenId', id)
   }
 }
-defineExpose({
-  typeClass,
-  picField,
-  appListForView,
-  layoutStyle,
-  showDetail,
-})
+
 
 </script>
 <style scoped>

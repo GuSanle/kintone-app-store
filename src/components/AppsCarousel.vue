@@ -52,9 +52,7 @@ const itemHeight = computed(() => {
 const typeClass = computed(() => {
   return type === 'S' ? 'divider-s' : 'divider-m'
 })
-defineExpose({
-  appListForView,
-})
+
 </script>
 <style scoped>
 .divider-m {
