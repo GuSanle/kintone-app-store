@@ -53,6 +53,10 @@ module.exports = defineConfig({
     }
   },
   configureWebpack: {
+    //如果不需要chunk，打包成一个文件的话，添加以下配置
+    // optimization: {
+    //   splitChunks: false,
+    // },
     resolve: {
       alias: {
         '@': resolve(__dirname, 'src'),
