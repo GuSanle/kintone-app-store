@@ -1,8 +1,7 @@
 <template>
-  <div class="sc-iTOPbJ eDQJfM" @click="showDialog()">
-    <button class="sc-kgfleI PyejM sc-iTOPbJ eDQJfM__button" type="button" title="App Store" aria-expanded="false"
-      aria-haspopup="true"><span role="img" aria-label="App Store" class="sc-dkzCjb hdmBZP"
-        style="width: 24px; height: 24px;">
+  <div @click="showDialog()">
+    <button class="appstore-button" type="button" title="App Store" aria-expanded="false" aria-haspopup="true"><span
+        role="img" aria-label="App Store" class="sc-dkzCjb hdmBZP" style="width: 24px; height: 24px;">
         <span aria-hidden="true"><img src="@/assets/icons/store.svg" alt class="appstore-img" />
         </span></span></button>
   </div>
