@@ -14,6 +14,8 @@ const checkInAdmin = (groupInfo) => {
   return groupInfo.id === adminGroupId
 }
 
+//当需要使用插件在多个kitnone应用中加载时，就不需要加入“DOMContentLoaded”这个事件监听了，只需要在插件中加入加载时机就行了。
+//时机为DOMContentLoaded，或者叫document-end
 document.addEventListener('DOMContentLoaded', () => {
   getUserGroups(code)
     .then((resp) => {
