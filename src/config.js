@@ -30,7 +30,7 @@ export const detailMapping = {
   appName: 'appName',
   document: 'document',
   icon: 'icon',
-  appid: 'id',
+  appid: 'aId',
   url: 'url',
   docLink: 'docLink',
   picTable: 'picTable',

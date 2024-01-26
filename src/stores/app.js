@@ -2,7 +2,7 @@ import { GetRecords } from '@/services/kintoneBackend'
 import { backendConfig, manageMapping, detailMapping, domainListMapping } from '@/config'
 import { findKey } from '@/libs/utils'
 const { appid, status, statusValue, sort, group } = manageMapping
-const { appid: id, appName, icon, url, picTable, appType } = detailMapping
+const { id, appName, icon, url, picTable, appType } = detailMapping
 const detailFields = [id, appName, icon, url, picTable, appType]
 const appTemplate = '应用模版'
 const pluginTemplate = '插件'

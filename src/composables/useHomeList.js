@@ -34,9 +34,15 @@ export default () => {
 
   //banner
   const bannerList = computed(() => {
-    return appsList.filter((item) => {
-      return item[homeDisplay].includes(keyWordBanner)
-    })
+    return appsList
+      .filter((item) => {
+        return item[homeDisplay].includes(keyWordBanner)
+      })
+      .concat(
+        pluginsList.filter((item) => {
+          return item[recommend].includes(keyWordHot)
+        }),
+      )
   })
 
   //midPicSwiper
